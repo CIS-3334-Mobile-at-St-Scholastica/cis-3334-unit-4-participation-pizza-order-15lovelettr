@@ -9,7 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="css.cis3334.pizzaorder.MainActivity">
+    tools:context="css.cis3334.pizzaorder.MainActivity"
+    android:weightSum="1">
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -27,14 +28,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/radioButtonMedium"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            tools:ignore="HardcodedText" />
 
         <RadioButton
             android:text="Large Pizza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/radioButtonLarge"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            tools:ignore="HardcodedText" />
 
     </RadioGroup>
 
@@ -43,32 +46,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/checkBoxCheese"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="12dp"
+        tools:ignore="HardcodedText" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"
+        android:layout_weight="0.10"
+        android:entries="@array/pizza_toppings" />
 
     <Button
         android:text="Order"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/buttonOrder"
-        android:onClick="onClickOrder" />
+        android:onClick="onClickOrder"
+        tools:ignore="HardcodedText" />
 
     <CheckBox
         android:text="CheckBoxDelivery"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/checkBoxDeluvery" />
+        android:id="@+id/checkBoxDeluvery"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:text="Total Due:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewTotal" />
+        android:id="@+id/textViewTotal"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:text="Order Status: Nothing ordered yet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewStatus" />
+        android:id="@+id/textViewStatus"
+        tools:ignore="HardcodedText" />
 
 
 </LinearLayout>

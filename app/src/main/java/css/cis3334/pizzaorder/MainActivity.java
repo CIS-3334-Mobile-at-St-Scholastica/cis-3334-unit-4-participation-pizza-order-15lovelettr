@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     CheckBox chkbxDelivery;
     TextView txtTotal;
     TextView txtStatus;
+    Spinner selectTopping;
     PizzaOrderInterface pizzaOrderSystem;
 
     @Override
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
 
         txtTotal = (TextView) findViewById(R.id.textViewTotal);
         txtStatus = (TextView) findViewById(R.id.textViewStatus);
+
+        selectTopping = (Spinner) findViewById(R.id.spinner);
 
         pizzaOrderSystem = new PizzaOrder(this);
     }
