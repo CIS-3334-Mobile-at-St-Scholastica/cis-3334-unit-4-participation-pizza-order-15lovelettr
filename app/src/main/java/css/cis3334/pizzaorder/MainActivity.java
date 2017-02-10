@@ -47,9 +47,33 @@ public class MainActivity extends AppCompatActivity implements updateViewInterfa
     }
 
     public void onClickOrder(View view) {
-        String orderDescription = pizzaOrderSystem.OrderPizza("Pepperoni","Large", false);
+        String pizzaSize = "";
+        String selectTop = "";
+        Boolean cheesy = false;
+        String orderDescription;
+
+        if (rbSmall.isChecked()) {
+            pizzaSize = "small";
+        }
+        else if (rbMedium.isChecked()) {
+            pizzaSize = "medium";
+        }
+        else if (rbLarge.isChecked()) {
+            pizzaSize = "large";
+        }
+
+        selectTop = selectTopping.getSelectedItem().toString();
+
+        if (chkbxCheese.isChecked()) {
+            cheesy = true;
+        }
+        if (chkbxDelivery.isChecked()) {
+            pizzaOrderSystem.setDelivery(true);
+        }
+
+        orderDescription = pizzaOrderSystem.OrderPizza(selectTop, pizzaSize, cheesy);
         //display a pop up message for a long period of time
-        Toast.makeText(getApplicationContext(), "You have ordered a "+orderDescription , Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "You have ordered a " + orderDescription , Toast.LENGTH_LONG).show();
         txtTotal.setText("Total Due: " + pizzaOrderSystem.getTotalBill().toString());
     }
 }
